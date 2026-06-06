@@ -1,0 +1,8 @@
+app:
+  development:
+    admin-email: ${DEV_ADMIN_EMAIL:}
+    admin-password: ${DEV_ADMIN_PASSWORD:}
+    admin-name: ${DEV_ADMIN_NAME:Development Admin}
+logging:
+  level:
+    br.com.culturatech.precoconfirmado: DEBUG

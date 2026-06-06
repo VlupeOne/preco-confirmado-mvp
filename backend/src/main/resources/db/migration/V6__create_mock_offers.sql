@@ -1,0 +1,21 @@
+CREATE TABLE mock_offers (
+    id UUID PRIMARY KEY,
+    external_id VARCHAR(120) NOT NULL,
+    title VARCHAR(500) NOT NULL,
+    price NUMERIC(19, 2) NOT NULL CHECK (price > 0),
+    regular_price NUMERIC(19, 2) CHECK (regular_price IS NULL OR regular_price > 0),
+    currency VARCHAR(3) NOT NULL DEFAULT 'BRL',
+    payment_type VARCHAR(30) NOT NULL,
+    seller_id VARCHAR(120),
+    seller_name VARCHAR(255),
+    condition VARCHAR(30) NOT NULL,
+    color VARCHAR(80),
+    storage VARCHAR(80),
+    in_stock BOOLEAN NOT NULL,
+    available_quantity INTEGER,
+    coupon_required BOOLEAN NOT NULL,
+    coupon_code VARCHAR(120),
+    source_url VARCHAR(2048) NOT NULL,
+    updated_at TIMESTAMPTZ NOT NULL,
+    CONSTRAINT uk_mock_offers_external_id UNIQUE (external_id)
+);

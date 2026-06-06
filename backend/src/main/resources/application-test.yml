@@ -1,0 +1,8 @@
+app:
+  monitoring:
+    enabled: false
+  notifications:
+    channel: LOG
+logging:
+  level:
+    org.testcontainers: INFO
